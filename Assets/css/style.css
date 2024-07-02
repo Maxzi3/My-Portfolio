@@ -3,44 +3,88 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: rgba(0, 0, 0, 0.836);
   font-family: "Montserrat", sans-serif;
   margin: 0;
-   color: #fff;
+  color: #fff;
 }
-/* header styling begings */
+/* header styling begins */
 header {
   background-image: url("../images/pexels-pablo-ezequiel-nieva-933807-3179911.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center -100px;
   width: 100%;
-  height: 100vh;
+  height: 900px;
+}
+.navbar{
+  display: none;
 }
 nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 50%;
-  margin: auto;
+  gap: 2rem;
   list-style: none;
-  padding: 2rem;
+}
+nav {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.show{
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index:0;
+}
+.col {
+  color: black;
 }
 nav a {
   text-decoration: none;
   color: white;
 }
+ /* nav a.active {
+  text-decoration: none;
+  color: black;
+} */
+/* a:link {
+  color: #fff;
+} */
+/* a:link .show.active{
+  color: black;
+} */
+
+
+/* a:visited{
+  color: #fff;
+} */
+/* a:hover {
+  color: rgba(126, 252, 0, 0.308);
+}
+a:active {
+  color: rgba(126, 252, 0, 0.308);
+} */
+
 .overlay {
-  background-color: gray;
+  background-color: black;
   width: 100%;
-  opacity: 0.9;
+  height: 900px;
+  opacity: 0.8;
 }
 header div {
-  padding: 2rem 0;
+  padding: 10rem 0;
   text-align: center;
 }
 
 header h4 {
+  margin-top: 15rem;
   font-size: 2rem;
   font-weight: 300;
 }
@@ -55,11 +99,12 @@ header p {
 }
 /* header styling ends */
 
-
 /* Section1 styling begins */
 .section1 {
-  width: 100%;
-  height: 75rem;
+  width: 90%;
+  /* height: 100vh; */
+  /* padding-bottom: 30rem; */
+  margin:auto;
 }
 .section1 h1 {
   margin: auto;
@@ -76,10 +121,11 @@ header p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 50%;
   margin: auto;
   list-style: none;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .section1 a {
   text-decoration: none;
@@ -140,19 +186,20 @@ header p {
   font-size: 1rem;
   font-weight: 200;
 }
+
 /* Section1 styling ends */
 
 /* Section2 styling begins */
 .section2 {
-  width: 90%;
-  height: 90rem;
+  width: 80%;
   margin: auto;
+  padding: 10rem 0;
 }
 .section2 h1 {
-  margin: auto;
   text-align: center;
   font-size: 2rem;
   font-weight: 300;
+  padding: 5rem 0;
 }
 .section2 span {
   font-family: "Roboto", sans-serif;
@@ -160,42 +207,32 @@ header p {
   color: rgba(126, 252, 0, 0.308);
 }
 
-.section2 .resume {
+.section2 .container {
   display: flex;
-  justify-content: space-around;
-  align-content: center;
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-top: 3rem;
-}
-.section2 .grids {
-  width: 90%;
-  height: 100vh;
-  display: grid;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 200px);
-  column-gap: 1rem;
-  row-gap: 5rem;
+  gap: 2rem;
 }
-.section2 .griditems {
+.section2 .container .item1 {
+  
+}
+.section2 .flexitems {
   background-color: rgba(128, 128, 128, 0.144);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
-.section2 .griditems h3 {
+.section2 .flexitems h3 {
   font-size: 0.8rem;
   font-weight: 700;
 }
-.section2 .griditems h2 {
+.section2 .flexitems h2 {
   color: rgba(126, 252, 0, 0.308);
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
-.section2 .griditems p h5 {
+.section2 .items p h5 {
   font-size: 0.8rem;
   font-weight: 100;
 }
@@ -205,26 +242,27 @@ header p {
 /* Section3 styling begins */
 .section3 {
   width: 90%;
-  height: 90vh;
+  /* height: 100vh; */
   margin: auto;
+  padding: 5rem 0;
 }
 .section3 .container {
-  width: 90%;
-  margin: 2rem auto;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 3rem;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .section3 .imgdiv {
   background-image: url("../images/pexels-pablo-ezequiel-nieva-933807-3179911.jpg");
   background-size: cover;
-  width: 50%;
+  width: 40%;
   height: 400px;
 }
 .section3 .textdiv {
-  width: 50%;
+  width: 40%;
   font-size: 1rem;
   font-weight: 100;
 }
@@ -270,18 +308,16 @@ header p {
 .section4 .flexitem {
   display: flex;
   justify-content: center;
-  gap: 2rem;
   align-items: center;
-  width: 90%;
-  margin: auto;
+  flex-wrap: wrap;
 }
-.section4 .flexitem2 {
+.section4 .flexitem1 {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  align-items: center;
-  width: 90%;
-  margin: 3rem auto;
+  flex-wrap: wrap;
+  width: 45%;
+  padding: 2rem 0 5rem 0;
+  gap: 1rem;
 }
 .section4 .person1 {
   background-image: url("../images/person_1.jpg");
@@ -297,33 +333,6 @@ header p {
   height: 50px;
   border-radius: 5rem;
 }
-.section4 .text-con {
-  position: relative;
-  width: 90%;
-  background-color: rgba(128, 128, 128, 0.144);
-  border-radius: 0.5rem;
-  padding: 2rem;
-  font-size: 1rem;
-  font-weight: 100;
-}
-
-.section4 .text-con::before {
-  content: "";
-  position: absolute;
-  top: 10px; /* Adjust this value to position the triangle vertically */
-  left: -10px; /* Move the triangle to the left side */
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid rgba(128, 128, 128, 0.144); /* Triangle color same as background */
-}
-
-.section4 .flexitem1 {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
 .section4 .person3 {
   background-image: url("../images/person_3.jpg");
   background-size: cover;
@@ -338,12 +347,35 @@ header p {
   height: 50px;
   border-radius: 5rem;
 }
+.section4 .text-con {
+  position: relative;
+  width: 80%;
+  height: 200px;
+  background-color: rgba(128, 128, 128, 0.144);
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.section4 .text-con::before {
+  content: "";
+  position: absolute;
+  top: 20px; /* Adjust this value to position the triangle vertically */
+  left: -10px; /* Move the triangle to the left side */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid rgba(128, 128, 128, 0.144); /* Triangle color same as background */
+}
+
 /* Section4 styling ends */
 
 /* Section5 styling begins */
 .section5 {
-  width: 80%;
-  height: 100vh;
+   width: 90%;
+  /* height: 100vh;  */
   margin: auto;
   padding-top: 5rem;
 }
@@ -378,30 +410,20 @@ header p {
 }
 .section5 .flexitems {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: auto;
 }
 .section5 .items {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+  width: 30%;
   background-color: rgba(128, 128, 128, 0.144);
-}
-.section5 .item1 {
   padding: 1rem;
-  width: 40%;
-  height: 450px;
-}
-.section5 .item2 {
-  padding: 1rem;
-  width: 35%;
-  height: 420px;
-}
-.section5 .item3 {
-  padding: 1rem;
-  width: 40%;
-  height: 450px;
 }
 .section5 .items a {
   text-decoration: none;
@@ -413,7 +435,7 @@ header p {
 /* Section6 styling Begins */
 .section6 {
   width: 80%;
-  height: 100vh;
+  /* height: 100vh; */
   margin: auto;
   padding-top: 10rem;
 }
@@ -430,9 +452,9 @@ header p {
 }
 .section6 .flexitems {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
 }
 .section6 .img-con {
   background-image: url("../images/img2.jpg");
@@ -447,6 +469,8 @@ header p {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
+  width: 30%;
   background-color: rgba(128, 128, 128, 0.144);
 }
 .section6 a {
@@ -470,8 +494,7 @@ header p {
 /* Section7 styling begins */
 .section7 {
   width: 90%;
-  height: 100vh;
-  margin: 10rem auto;
+  /* height: 100vh; */
   padding-top: 10rem;
 }
 .section7 h1 {
@@ -480,30 +503,27 @@ header p {
   font-weight: 300;
   text-align: center;
 }
-.section7 span {
+.section7 span {  
   color: #fff;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
 }
-.section7 .heads {
-  font-size: 1rem;
-  font-weight: 100;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.section7 .container #h2{
+ 
 }
-.section7 .form {
+.section7 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
 }
 .section7 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  width: 100%;
   gap: 1rem;
-  padding: 2rem;
 }
 .section7 input {
   width: 500px;
@@ -523,43 +543,41 @@ header p {
   border-radius: 1.5rem;
   width: 200px;
   padding: 1rem;
-  background-color:rgba(126, 252, 0, 0.308);
+  background-color: rgba(126, 252, 0, 0.308);
 }
 .section7 .contacts {
   text-align: left;
   font-size: 0.9rem;
   font-weight: 100;
-  margin-right: 10rem;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
 /* Section7 styling ends */
 
-
 /* footer styling begins */
-footer{
-    margin-top:20rem ;
-    padding-top: 15rem;
-    text-align: center;
+footer {
+  padding-top: 10rem;
+  text-align: center;
 }
-footer p{
-    font-size: 1.2rem;
-    font-weight: 100;
+footer p {
+  font-size: 1.2rem;
+  font-weight: 100;
 }
-footer div{
-    width: 40%;
-    margin: 3rem auto;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
-   gap: 1rem;
+footer div {
+  width: 40%;
+  margin: 3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-footer .uil{
-    font-size: 2rem;
-    background-color: rgba(128, 128, 128, 0.144);
-    color: rgba(126, 252, 0, 0.308);
-    border-radius: 1.5rem;
-    padding: 0.5rem;
+footer .uil {
+  font-size: 2rem;
+  background-color: rgba(128, 128, 128, 0.144);
+  color: rgba(126, 252, 0, 0.308);
+  border-radius: 1rem;
+  padding: 0.8rem;
 }
 /* footer styling ends */
+
