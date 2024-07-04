@@ -8,13 +8,24 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 const menuItems = document.querySelectorAll(".menu a");
 window.addEventListener("scroll", () => {
-    display.classList.toggle("show", window.scrollY >= 500)
-    texts.classList.toggle("col", window.scrollY > 500)
-    a.classList.toggle("col", window.scrollY >= 500)
-    b.classList.toggle("col", window.scrollY >= 500)
-    c.classList.toggle("col", window.scrollY >= 500)
-    d.classList.toggle("col", window.scrollY >= 500)
-    // texts.classList.toggle('col')
+  if (window.scrollY > 100) {
+    display.style.backgroundColor = "white";
+    texts.classList.toggle("col", window.scrollY > 100)
+    a.classList.toggle("col", window.scrollY >= 100)
+    b.classList.toggle("col", window.scrollY >= 100)
+    c.classList.toggle("col", window.scrollY >= 100)
+    d.classList.toggle("col", window.scrollY >= 100)
+    
+  } else {
+    display.style.backgroundColor = "transparent";
+        texts.classList.remove("col", window.scrollY > 100);
+        a.classList.remove("col", window.scrollY >= 100);
+        b.classList.remove("col", window.scrollY >= 100);
+        c.classList.remove("col", window.scrollY >= 100);
+        d.classList.remove("col", window.scrollY >= 100);
+  }
+
+    
 });
 document.addEventListener("DOMContentLoaded", () => {
   menuToggle.addEventListener("click", () => {
