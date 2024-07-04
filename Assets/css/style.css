@@ -19,6 +19,7 @@ header {
   background-position: center -100px;
   width: 100%;
   height: 900px;
+  
 }
 .navbar{
   display: none;
@@ -35,13 +36,14 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+   background-color: transparent; 
   width: 100%;
 }
 .show{
   background-color: #fff;
   position: fixed;
   top: 0;
-  z-index:0;
+  z-index:1000;
 }
 .col {
   color: black;
@@ -50,27 +52,6 @@ nav a {
   text-decoration: none;
   color: white;
 }
- /* nav a.active {
-  text-decoration: none;
-  color: black;
-} */
-/* a:link {
-  color: #fff;
-} */
-/* a:link .show.active{
-  color: black;
-} */
-
-
-/* a:visited{
-  color: #fff;
-} */
-/* a:hover {
-  color: rgba(126, 252, 0, 0.308);
-}
-a:active {
-  color: rgba(126, 252, 0, 0.308);
-} */
 
 .overlay {
   background-color: black;
@@ -102,9 +83,20 @@ header p {
 /* Section1 styling begins */
 .section1 {
   width: 90%;
-  /* height: 100vh; */
-  /* padding-bottom: 30rem; */
   margin:auto;
+   /* transform: translateY(100px); */
+  /* transition: opacity 0.6s ease-out, transform 0.6s ease-out; */
+  /* opacity: 0; */
+  /* z-index: 0; */
+}
+.section1.to-reveal {
+  /* opacity: 0; */
+  /* transform: translateY(100px); */
+}
+
+.section1.revealed {
+  /* opacity: 1; */
+  /* transform: translateY(0); */
 }
 .section1 h1 {
   margin: auto;
@@ -143,10 +135,12 @@ header p {
   grid-template-rows: repeat(2, 200px);
   column-gap: 2rem;
   row-gap: 14rem;
+ 
 }
 .section1 .items {
   width: 100%;
   height: 300px;
+   
 }
 .section1 .item1 {
   background-image: url("../images/img1.jpg");
@@ -213,14 +207,13 @@ header p {
   align-items: center;
   gap: 2rem;
 }
-.section2 .container .item1 {
-  
-}
+
 .section2 .flexitems {
   background-color: rgba(128, 128, 128, 0.144);
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 2rem;
+
 }
 .section2 .flexitems h3 {
   font-size: 0.8rem;
